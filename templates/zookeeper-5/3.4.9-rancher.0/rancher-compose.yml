@@ -1,0 +1,51 @@
+zookeeper-4:
+  scale: 1
+  health_check:
+    port: 2181
+    interval: 2000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    strategy: recreate
+    response_timeout: 2000
+    healthy_threshold: 2
+zookeeper-3:
+  scale: 1
+  health_check:
+    port: 2181
+    interval: 2000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    strategy: recreate
+    response_timeout: 2000
+    healthy_threshold: 2
+zookeeper-2:
+  scale: 1
+  health_check:
+    port: 2181
+    interval: 2000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    strategy: recreate
+    response_timeout: 2000
+    healthy_threshold: 2
+zookeeper-1:
+  scale: 1
+  health_check:
+    port: 2181
+    interval: 2000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    strategy: recreate
+    response_timeout: 2000
+    healthy_threshold: 2
+zookeeper-5:
+  scale: 1
+  health_check:
+    port: 2181
+    interval: 2000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    strategy: recreate
+    response_timeout: 2000
+    healthy_threshold: 2
+
