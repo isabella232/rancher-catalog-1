@@ -1,6 +1,6 @@
 name: Apache Zookeeper
 description: |
-  Zookeeper cluster - 5 node
+  Zookeeper cluster
 version: 0.0.1
 category: Clustering
 maintainer: "Kevin McGrath <keivn.mcgrath@sungardas.com>"
