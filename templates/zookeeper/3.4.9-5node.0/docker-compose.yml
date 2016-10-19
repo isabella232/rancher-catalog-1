@@ -3,7 +3,7 @@ zookeeper-4:
     ZOO_MY_ID: '4'
     ZOO_SERVERS: server.1=zookeeper-1:2888:3888 server.2=zookeeper-2:2888:3888 server.3=zookeeper-3:2888:3888 server.4=zookeeper-4:2888:3888 server.5=zookeeper-5:2888:3888
   labels:
-    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=zookeeper/zookeeper-1,io.rancher.stack_service.name=zookeeper/zookeeper-2,io.rancher.stack_service.name=zookeeper/zookeeper-3,io.rancher.stack_service.name=zookeeper/zookeeper-5
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/zookeeper-1,io.rancher.stack_service.name=$${stack_name}/zookeeper-2,io.rancher.stack_service.name=$${stack_name}/zookeeper-3,io.rancher.stack_service.name=$${stack_name}/zookeeper-5
   tty: true
   image: zookeeper:3.4.9
   stdin_open: true
@@ -12,7 +12,7 @@ zookeeper-3:
     ZOO_MY_ID: '3'
     ZOO_SERVERS: server.1=zookeeper-1:2888:3888 server.2=zookeeper-2:2888:3888 server.3=zookeeper-3:2888:3888 server.4=zookeeper-4:2888:3888 server.5=zookeeper-5:2888:3888
   labels:
-    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=zookeeper/zookeeper-1,io.rancher.stack_service.name=zookeeper/zookeeper-2,io.rancher.stack_service.name=zookeeper/zookeeper-4,io.rancher.stack_service.name=zookeeper/zookeeper-5
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/zookeeper-1,io.rancher.stack_service.name=$${stack_name}/zookeeper-2,io.rancher.stack_service.name=$${stack_name}/zookeeper-4,io.rancher.stack_service.name=$${stack_name}/zookeeper-5
   tty: true
   image: zookeeper:3.4.9
   stdin_open: true
@@ -21,7 +21,7 @@ zookeeper-2:
     ZOO_MY_ID: '2'
     ZOO_SERVERS: server.1=zookeeper-1:2888:3888 server.2=zookeeper-2:2888:3888 server.3=zookeeper-3:2888:3888 server.4=zookeeper-4:2888:3888 server.5=zookeeper-5:2888:3888
   labels:
-    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=zookeeper/zookeeper-1,io.rancher.stack_service.name=zookeeper/zookeeper-3,io.rancher.stack_service.name=zookeeper/zookeeper-4,io.rancher.stack_service.name=zookeeper/zookeeper-5
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/zookeeper-1,io.rancher.stack_service.name=$${stack_name}/zookeeper-3,io.rancher.stack_service.name=$${stack_name}/zookeeper-4,io.rancher.stack_service.name=$${stack_name}/zookeeper-5
   tty: true
   image: zookeeper:3.4.9
   stdin_open: true
@@ -30,7 +30,7 @@ zookeeper-1:
     ZOO_MY_ID: '1'
     ZOO_SERVERS: server.1=zookeeper-1:2888:3888 server.2=zookeeper-2:2888:3888 server.3=zookeeper-3:2888:3888 server.4=zookeeper-4:2888:3888 server.5=zookeeper-5:2888:3888
   labels:
-    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=zookeeper/zookeeper-2,io.rancher.stack_service.name=zookeeper/zookeeper-3,io.rancher.stack_service.name=zookeeper/zookeeper-4,io.rancher.stack_service.name=zookeeper/zookeeper-5
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/zookeeper-2,io.rancher.stack_service.name=$${stack_name}/zookeeper-3,io.rancher.stack_service.name=$${stack_name}/zookeeper-4,io.rancher.stack_service.name=$${stack_name}/zookeeper-5
   tty: true
   image: zookeeper:3.4.9
   stdin_open: true
@@ -39,7 +39,7 @@ zookeeper-5:
     ZOO_MY_ID: '5'
     ZOO_SERVERS: server.1=zookeeper-1:2888:3888 server.2=zookeeper-2:2888:3888 server.3=zookeeper-3:2888:3888 server.4=zookeeper-4:2888:3888 server.5=zookeeper-5:2888:3888
   labels:
-    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=zookeeper/zookeeper-1,io.rancher.stack_service.name=zookeeper/zookeeper-2,io.rancher.stack_service.name=zookeeper/zookeeper-3,io.rancher.stack_service.name=zookeeper/zookeeper-4
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/zookeeper-1,io.rancher.stack_service.name=$${stack_name}/zookeeper-2,io.rancher.stack_service.name=$${stack_name}/zookeeper-3,io.rancher.stack_service.name=$${stack_name}/zookeeper-4
   tty: true
   image: zookeeper:3.4.9
   stdin_open: true
