@@ -1,15 +1,20 @@
 # rancher-catalog
-The rancher catalog of our products
+A catalog of services for Rancher
 
-* In this repo you can adjust the deployment of our services with rancher.
-* In /templates, the different stacks are specified. (e.g. cfs-config-tool).
-* the file config.yml specifies the description in the Rancher-Catalog-UI
-* the file <stack>Icon-<stack>.svg is the logo shown in the Rancher-Catalog-UI
-* Each stack has different deployment-versions (int-valued folders)
-* each folder contains a docker-compose.yml and a rancher-compose.yml
+## Zookeeper
 
-# docker-compose.yml
-* specifies the build
+An Apache Zookeeper cluster of 3-5 nodes that uses the offical [image][docker-zookeeper-url] from Docker Hub.
 
-# rancher-compose.yml
-* specifies which variables can be specified in the rancher-UI and then can be used in the docker-compose.yml
+## Sungard Availability Services | Labs
+[![Sungard Availability Services | Labs][labs-image]][labs-github-url]
+
+This project is maintained by the Labs team at [Sungard Availability
+Services](http://sungardas.com)
+
+GitHub: [https://sungardas.github.io](https://sungardas.github.io)
+
+Blog: [http://blog.sungardas.com/CTOLabs/](http://blog.sungardas.com/CTOLabs/)
+
+[labs-github-url]: https://sungardas.github.io
+[labs-image]: https://raw.githubusercontent.com/SungardAS/repo-assets/master/images/logos/sungardas-labs-logo-small.png
+[docker-zookeeper-url]: https://hub.docker.com/r/_/zookeeper

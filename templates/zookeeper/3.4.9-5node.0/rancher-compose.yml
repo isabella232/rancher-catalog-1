@@ -2,17 +2,7 @@
   name: zookeeper
   version: 3.4.9-5node.0
   description: Zookeeper 5 node
-zookeeper-4:
-  scale: 1
-  health_check:
-    port: 2181
-    interval: 2000
-    initializing_timeout: 60000
-    unhealthy_threshold: 3
-    strategy: recreate
-    response_timeout: 2000
-    healthy_threshold: 2
-zookeeper-3:
+zookeeper-1:
   scale: 1
   health_check:
     port: 2181
@@ -32,7 +22,17 @@ zookeeper-2:
     strategy: recreate
     response_timeout: 2000
     healthy_threshold: 2
-zookeeper-1:
+zookeeper-3:
+  scale: 1
+  health_check:
+    port: 2181
+    interval: 2000
+    initializing_timeout: 60000
+    unhealthy_threshold: 3
+    strategy: recreate
+    response_timeout: 2000
+    healthy_threshold: 2
+zookeeper-4:
   scale: 1
   health_check:
     port: 2181
@@ -52,4 +52,3 @@ zookeeper-5:
     strategy: recreate
     response_timeout: 2000
     healthy_threshold: 2
-
