@@ -1,6 +1,6 @@
 .catalog:
-  name: zookeeper-5
-  version: 3.4.9-5node.0
+  name: zookeeper
+  version: 3.4.9-3node.0
   description: Zookeeper 5 node
 zookeeper-3:
   scale: 1
