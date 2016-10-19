@@ -1,0 +1,8 @@
+name: Convoy EBS
+description: |
+  Convoy EBS
+version: 0.0.1
+category: Storage
+maintainer: "Kevin McGrath <keivn.mcgrath@sungardas.com>"
+minimum_rancher_version: v1.0.0
+license: Apache-2.0
