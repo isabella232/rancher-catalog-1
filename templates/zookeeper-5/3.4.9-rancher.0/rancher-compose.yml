@@ -1,3 +1,7 @@
+.catalog:
+  name: zookeeper-5
+  version: 3.4.9-rancher.0
+  description: Zookeeper 5 node
 zookeeper-4:
   scale: 1
   health_check:

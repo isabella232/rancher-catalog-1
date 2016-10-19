@@ -1,7 +1,7 @@
 name: Apache Zookeeper
 description: |
   Zookeeper cluster - 5 node
-version: 3.4.9-rancher.0
+version: 0.0.1
 category: Clustering
 maintainer: "Kevin McGrath <keivn.mcgrath@sungardas.com>"
 minimum_rancher_version: v1.0.0
