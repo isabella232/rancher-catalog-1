@@ -1,0 +1,20 @@
+.catalog:
+  name: convoy-ebs
+  version: 0.5.0.2-rancher
+  description: Convoy EBS
+convoy-ebs:
+  labels:
+    io.rancher.scheduler.global: 'true'
+    io.rancher.container.pull_image: always
+  command:
+  - convoy-ebs
+  image: sungardas/rancher-convoy
+  pid: host
+  volumes:
+  - /dev:/dev
+  - /proc:/host/proc
+  - /var/run:/host/var/run
+  - /run:/host/run
+  - /etc/docker/plugins:/etc/docker/plugins
+  privileged: true
+  net: host
