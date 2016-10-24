@@ -15,7 +15,7 @@ concourse-web:
   ports: ["8080:8080"]
   volumes: ["/data-concourse/keys:/concourse-keys"]
   environment:
-    - ETCD=127.0.0.1
+    - ETCD=etcd.etcd-ha
     - CONCOURSE_BASIC_AUTH_USERNAME=${BASIC_AUTH_USER}
     - CONCOURSE_BASIC_AUTH_PASSWORD=${BASIC_AUTH_PASS}
     - CONCOURSE_EXTERNAL_URL=${CONCOURSE_EXTERNAL_URL}
@@ -32,7 +32,7 @@ concourse-worker:
   privileged: true
   volumes: ["/data-concourse/keys:/concourse-keys"]
   environment:
-    - ETCD=127.0.0.1
+    - ETCD=etcd.etcd-ha
     - CONCOURSE_WORK_DIR=/opt/concourse/worker
   labels:
     io.rancher.container.dns: 'true'
