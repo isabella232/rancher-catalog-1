@@ -1,0 +1,7 @@
+name: Concourse-CI
+description: |
+  Concourse CI server
+version: 1.0.0-alpha.1
+category: Continuous Integration
+
+

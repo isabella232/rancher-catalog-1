@@ -1,0 +1,39 @@
+.catalog:
+  name: concourse-ci
+  version: 2.3.7
+  minimum_rancher_version: v1.1.1
+  questions:
+  - variable: SCALE
+    description: Desired cluster size. 3, 5, or 7 are good choices. You will need this many hosts to reach your desired scale.
+    label: Number of Nodes
+    required: true
+    default: 3
+    type: int
+  - variable: DEBUG
+    description: Enable or disable verbose logging
+    label: Debug
+    required: true
+    default: true
+    type: boolean
+  - variable: CONCOURSE_EXTERNAL_URL
+    description: URL for Concourse Interface
+    label: Concourse_External_URL
+    required: true
+    default: elb-1087748055.us-west-2.elb.amazonaws.com
+    type: str
+    default: elb-1602268090.us-west-2.elb.amazonaws.com
+  - variable: POSTGRES_DATA_SOURCE
+    label: PostgresDataSource
+    required: true
+    default: postgres://concoursedb:e32knrl34gfiodhs@concoursedb.cbkjjrmmxvgx.us-west-2.rds.amazonaws.com:5432/concoursedb?sslmode=disable
+    type: str
+  - variable: BASIC_AUTH_USER
+    label: BasicAuthUser
+    required: true
+    default: concourse_user
+    type: str
+  - variable: BASIC_AUTH_PASS
+    label: BasicAuthPass
+    required: true
+    default: concourse_pass
+    type: str
