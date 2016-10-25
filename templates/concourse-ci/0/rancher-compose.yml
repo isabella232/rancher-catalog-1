@@ -19,7 +19,7 @@
     description: URL for Concourse Interface
     label: Concourse_External_URL
     required: true
-    default: concourse.ci.sungardas.io
+    default: https://concourse.ci.sungardas.io
     type: str
   - variable: POSTGRES_DATA_SOURCE
     label: PostgresDataSource
