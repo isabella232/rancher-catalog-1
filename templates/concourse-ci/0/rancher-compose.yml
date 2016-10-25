@@ -19,21 +19,18 @@
     description: URL for Concourse Interface
     label: Concourse_External_URL
     required: true
-    default: elb-1087748055.us-west-2.elb.amazonaws.com
+    default: concourse.ci.sungardas.io
     type: str
-    default: elb-1602268090.us-west-2.elb.amazonaws.com
   - variable: POSTGRES_DATA_SOURCE
     label: PostgresDataSource
     required: true
     default: postgres://concoursedb:e32knrl34gfiodhs@concoursedb.cbkjjrmmxvgx.us-west-2.rds.amazonaws.com:5432/concoursedb?sslmode=disable
     type: str
-  - variable: BASIC_AUTH_USER
-    label: BasicAuthUser
+  - variable: GITHUB_CLIENT_ID
+    label: GithubClientID
     required: true
-    default: concourse_user
     type: str
-  - variable: BASIC_AUTH_PASS
-    label: BasicAuthPass
+  - variable: GITHUB_CLIENT_SECRET
+    label: GithubClientSecret
     required: true
-    default: concourse_pass
     type: str
