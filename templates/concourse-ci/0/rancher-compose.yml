@@ -20,17 +20,22 @@
     label: Concourse_External_URL
     required: true
     default: https://concourse.ci.sungardas.io
-    type: str
+    type: string
   - variable: POSTGRES_DATA_SOURCE
     label: PostgresDataSource
     required: true
     default: postgres://concoursedb:e32knrl34gfiodhs@concoursedb.cbkjjrmmxvgx.us-west-2.rds.amazonaws.com:5432/concoursedb?sslmode=disable
-    type: str
+    type: string
   - variable: GITHUB_CLIENT_ID
     label: GithubClientID
     required: true
-    type: str
+    type: string
   - variable: GITHUB_CLIENT_SECRET
     label: GithubClientSecret
     required: true
-    type: str
+    type: string
+  - variable: GITHUB_USERS
+    label: GithubUsers
+    required: true
+    type: string
+    default: gregorycox,AlexOugh,kmcgrath,MegRamsey,nkchitturi,tloeppke,rabay108
