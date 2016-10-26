@@ -21,9 +21,6 @@ fluentd-conf:
   command: /bin/true
   net: none
   image: busybox
-  #tty: true
-  #stdin_open: true
-  #pid: host
   privileged: true
   volumes:
     - /var/lib/docker/containers:/var/lib/docker/containers
