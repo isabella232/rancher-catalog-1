@@ -1,0 +1,17 @@
+.catalog:
+  name: fluentd-container-logger
+  version: 1.0.1
+  minimum_rancher_version: v1.1.1
+  questions:
+  - variable: AWS_REGION
+    description: Region Hosts are running in
+    label: AwsRegion
+    required: true
+    default: us-west-2
+    type: string
+  - variable: LOG_GROUP_NAME
+    description: Log Group Name
+    label: LogGroupName
+    required: true
+    default: nonprod-ctosandbox-loguum
+    type: string

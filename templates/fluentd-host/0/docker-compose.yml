@@ -1,0 +1,29 @@
+
+fluentd:
+  tty: true
+  stdin_open: true
+  ports: ["24224:24224"]
+  image: gregorycox/fluend-container
+  volumes_from:
+    - fluentd-conf
+  environment:
+    - LOG_GROUP_NAME=${LOG_GROUP_NAME}
+    - AWS_REGION=${AWS_REGION}
+  labels:
+    io.rancher.scheduler.global: 'true'
+    io.rancher.container.pull_image: always
+    io.rancher.sidekicks: fluentd-conf
+
+fluentd-conf:
+  command: /bin/true
+  net: none
+  image: busybox
+  tty: true
+  stdin_open: true
+  pid: host
+  privileged: true
+  labels:
+    io.rancher.container.pull_image: always
+  volumes:
+    - /var/lib/docker/containers:/var/lib/docker/containers
+    - /var/run/docker.sock:/var/run/docker.sock
