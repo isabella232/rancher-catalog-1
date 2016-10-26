@@ -4,8 +4,10 @@ fluentd:
   stdin_open: true
   ports: ["24224:24224"]
   image: gregorycox/fluend-container
-  volumes_from:
-    - fluentd-conf
+  privileged: true
+  volumes:
+    - /var/lib/docker/containers:/var/lib/docker/containers
+    - /var/run/docker.sock:/var/run/docker.sock
   environment:
     - LOG_GROUP_NAME=${LOG_GROUP_NAME}
     - AWS_REGION=${AWS_REGION}
@@ -16,16 +18,3 @@ fluentd:
     io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
     io.rancher.container.pull_image: always
 
-
-fluentd-conf:
-  command: /bin/true
-  net: none
-  image: busybox
-  privileged: true
-  volumes:
-    - /var/lib/docker/containers:/var/lib/docker/containers
-    - /var/run/docker.sock:/var/run/docker.sock
-    labels:
-      io.rancher.container.start_once: 'true'
-      io.rancher.scheduler.global: 'true'
-      io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
