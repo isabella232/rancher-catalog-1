@@ -1,7 +1,7 @@
 
 fluentd:
   ports: ["24224:24224"]
-  image: gregorycox/fluend-container
+  image: gregorycox/fluentd-container
   privileged: true
   volumes:
     - /var/lib/docker/containers:/var/lib/docker/containers
