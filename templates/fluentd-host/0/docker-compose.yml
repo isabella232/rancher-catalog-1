@@ -10,20 +10,25 @@ fluentd:
     - LOG_GROUP_NAME=${LOG_GROUP_NAME}
     - AWS_REGION=${AWS_REGION}
   labels:
-    io.rancher.scheduler.global: 'true'
-    io.rancher.container.pull_image: always
+    io.rancher.container.dns: 'true'
     io.rancher.sidekicks: fluentd-conf
+    io.rancher.scheduler.global: 'true'
+    io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
+    io.rancher.container.pull_image: always
+
 
 fluentd-conf:
   command: /bin/true
   net: none
   image: busybox
-  tty: true
-  stdin_open: true
-  pid: host
+  #tty: true
+  #stdin_open: true
+  #pid: host
   privileged: true
-  labels:
-    io.rancher.container.pull_image: always
   volumes:
     - /var/lib/docker/containers:/var/lib/docker/containers
     - /var/run/docker.sock:/var/run/docker.sock
+    labels:
+      io.rancher.container.start_once: 'true'
+      io.rancher.scheduler.global: 'true'
+      io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
