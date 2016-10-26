@@ -13,7 +13,6 @@ fluentd:
     - AWS_REGION=${AWS_REGION}
   labels:
     io.rancher.container.dns: 'true'
-    io.rancher.sidekicks: fluentd-conf
     io.rancher.scheduler.global: 'true'
     io.rancher.scheduler.affinity:container_label_ne: io.rancher.stack_service.name=$${stack_name}/$${service_name}
     io.rancher.container.pull_image: always
