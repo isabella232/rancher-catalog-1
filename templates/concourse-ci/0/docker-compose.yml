@@ -15,7 +15,7 @@ concourse-web:
   ports: ["8080:8080"]
   volumes: ["/data-concourse/keys:/concourse-keys"]
   environment:
-    - ETCD=etcd.etcd-ha.rancher.internal
+    # - ETCD=etcd.etcd-ha.rancher.internal
     - CONCOURSE_GITHUB_AUTH_CLIENT_ID=${GITHUB_CLIENT_ID}
     - CONCOURSE_GITHUB_AUTH_CLIENT_SECRET=${GITHUB_CLIENT_SECRET}
     - GITHUB_USERS=${GITHUB_USERS}
@@ -35,7 +35,7 @@ concourse-worker:
   privileged: true
   volumes: ["/data-concourse/keys:/concourse-keys"]
   environment:
-    - ETCD=etcd.etcd-ha.rancher.internal
+    # - ETCD=etcd.etcd-ha.rancher.internal
     - CONCOURSE_WORK_DIR=/opt/concourse/worker
   labels:
     io.rancher.container.dns: 'true'
