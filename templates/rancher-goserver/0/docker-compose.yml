@@ -14,6 +14,7 @@ gocd-server:
   labels:
     io.rancher.container.hostname_override: container_name
     io.rancher.sidekicks: gocd-volume
+    io.rancher.container.pull_image: always
 gocd-volume:
   net: none
   labels:
