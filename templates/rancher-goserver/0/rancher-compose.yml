@@ -46,7 +46,7 @@
       description: "Work volume to save goserver data"
       label: "Work volume:"
       required: true
-      default: "/var/lib/docker/go-server-work"
+      default: "/data"
       type: "string"
     - variable: "volume_driver"
       label: "Driver volume:"
