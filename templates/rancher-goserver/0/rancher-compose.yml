@@ -7,6 +7,17 @@
   minimum_rancher_version: v0.59.0
   uuid: goserver-0
   questions:
+    - variable: "user_auth"
+      description: "User Auth, like <user1:password1 user2:password2>"
+      label: "User Auth:"
+      required: true
+      type: "string"
+    - variable: "agent_key"
+      description: "Agent Key for auto-registration of agents"
+      label: "Agent Key:"
+      required: true
+      default: "0123456789"
+      type: "string"
     - variable: public_port
       description: "public port to access the gocd server"
       label: "Public Port"

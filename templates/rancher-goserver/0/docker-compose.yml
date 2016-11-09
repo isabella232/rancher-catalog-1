@@ -8,6 +8,8 @@ gocd-server:
   environment:
   - SERVER_MEM=${mem_initial}m
   - SERVER_MAX_MEM=${mem_max}m
+  - AGENT_KEY=${agent_key}
+  - USER_AUTH=${user_auth}
   ports:
   - ${public_port}:8153
   - ${ssh_port}:8154
@@ -21,7 +23,14 @@ gocd-volume:
     io.rancher.container.hostname_override: container_name
     io.rancher.container.start_once: true
   volumes:
-  - ${volume_work}:/opt/go-server/work
+    - ${volume_work}/artifacts:/var/lib/go-server/artifacts
+    - ${volume_work}/db:/var/lib/go-server/db/h2db
+    - ${volume_work}/plugins:/var/lib/go-server/plugins/external
+    - ${volume_work}/flyweight:/var/lib/go-server/pipelines/flyweight
+    - ${volume_work}/config:/etc/go
+    - ${volume_work}/logs:/var/log/go-server
+    - ${volume_work}/ssh:/var/go/.ssh
+    # - ${volume_work}:/opt/go-server/work
   volume_driver: ${volume_driver}
   entrypoint: /bin/true
   image: busybox
