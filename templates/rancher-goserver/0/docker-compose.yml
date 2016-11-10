@@ -31,6 +31,13 @@ gocd-volume:
     - ${volume_work}/logs:/var/log/go-server
     - ${volume_work}/ssh:/var/go/.ssh
     # - ${volume_work}:/opt/go-server/work
+    # - ${volume_work}/artifacts:/var/lib/go-server/artifacts
+    # - ${volume_work}/db:/var/lib/go-server/db/h2db
+    # - ${volume_work}/plugins:/var/lib/go-server/plugins/external
+    # - ${volume_work}/flyweight:/var/lib/go-server/pipelines/flyweight
+    # - ${volume_work}/config:/etc/go
+    # - ${volume_work}/logs:/var/log/go-server
+    # - ${volume_work}/ssh:/var/go/.ssh
   volume_driver: ${volume_driver}
   entrypoint: /bin/true
   image: busybox

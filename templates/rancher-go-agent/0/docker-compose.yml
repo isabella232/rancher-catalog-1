@@ -1,0 +1,51 @@
+gocd-agent:
+  labels:
+    gocd.role: agent
+  tty: true
+  image: gregorycox/rancher-go-agent
+  # volumes_from:
+  # - gocd-volume
+  volumes:
+    - /var/run/docker.sock:/var/run/docker.sock
+    - /usr/bin/docker:/usr/bin/docker
+  environment:
+    - GO_SERVER="https://gocd.ci.sungardas.io:8154/go"
+    - GO_SERVER_PORT="8154"
+    - AGENT_MEM=${mem_initial}m
+    - AGENT_MAX_MEM=${mem_max}m
+    - AGENT_KEY=${agent_key}
+    # - AGENT_RESOURCES=""
+    # - AGENT_ENVIRONMENTS=""
+    # - AGENT_HOSTNAME=""
+    - DOCKER_GID_ON_HOST="$(getent group docker | cut -d: -f3)"
+  ports:
+  - ${public_port}:8153
+  - ${ssh_port}:8154
+  labels:
+    io.rancher.container.hostname_override: container_name
+    # io.rancher.sidekicks: gocd-volume
+    io.rancher.container.pull_image: always
+# gocd-volume:
+#   net: none
+#   labels:
+#     io.rancher.container.hostname_override: container_name
+#     io.rancher.container.start_once: true
+  # volumes:
+    # - ${volume_work}/artifacts:/var/lib/go-server/artifacts
+    # - ${volume_work}/db:/var/lib/go-server/db/h2db
+    # - ${volume_work}/plugins:/var/lib/go-server/plugins/external
+    # - ${volume_work}/flyweight:/var/lib/go-server/pipelines/flyweight
+    # - ${volume_work}/config:/etc/go
+    # - ${volume_work}/logs:/var/log/go-server
+    # - ${volume_work}/ssh:/var/go/.ssh
+    # - ${volume_work}:/opt/go-server/work
+    # - ${volume_work}/artifacts:/var/lib/go-server/artifacts
+    # - ${volume_work}/db:/var/lib/go-server/db/h2db
+    # - ${volume_work}/plugins:/var/lib/go-server/plugins/external
+    # - ${volume_work}/flyweight:/var/lib/go-server/pipelines/flyweight
+    # - ${volume_work}/config:/etc/go
+    # - ${volume_work}/logs:/var/log/go-server
+    # - ${volume_work}/ssh:/var/go/.ssh
+  # volume_driver: ${volume_driver}
+  # entrypoint: /bin/true
+  # image: busybox
