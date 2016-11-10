@@ -14,8 +14,7 @@ gocd-agent:
     - AGENT_MAX_MEM=${mem_max}m
     - AGENT_KEY=${agent_key}
   ports:
-  - ${public_port}:8153
-  - ${ssh_port}:8154
+  - ${go_server_port}:8153
   labels:
     io.rancher.container.hostname_override: container_name
     io.rancher.container.pull_image: always
