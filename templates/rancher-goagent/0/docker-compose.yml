@@ -3,8 +3,6 @@ gocd-agent:
     gocd.role: agent
   tty: true
   image: gregorycox/rancher-goagent
-  # volumes_from:
-  # - gocd-volume
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
     - /usr/bin/docker:/usr/bin/docker
@@ -14,18 +12,17 @@ gocd-agent:
     - AGENT_MEM=${mem_initial}m
     - AGENT_MAX_MEM=${mem_max}m
     - AGENT_KEY=${agent_key}
-    # - AGENT_RESOURCES=""
-    # - AGENT_ENVIRONMENTS=""
-    # - AGENT_HOSTNAME=""
-    - DOCKER_GID_ON_HOST="$(getent group docker | cut -d: -f3)"
+    - DOCKER_GID_ON_HOST=""
   ports:
   - ${public_port}:8153
   - ${ssh_port}:8154
   labels:
     io.rancher.container.hostname_override: container_name
-    # io.rancher.sidekicks: gocd-volume
     io.rancher.container.pull_image: always
     io.rancher.scheduler.affinity:host_label: type=agent
+
+
+    # io.rancher.sidekicks: gocd-volume
 # gocd-volume:
 #   net: none
 #   labels:
@@ -50,3 +47,11 @@ gocd-agent:
   # volume_driver: ${volume_driver}
   # entrypoint: /bin/true
   # image: busybox
+    # - AGENT_RESOURCES=""
+    # - AGENT_ENVIRONMENTS=""
+    # - AGENT_HOSTNAME=""
+    # $(getent group docker | cut -d: -f3)
+
+
+  # volumes_from:
+  # - gocd-volume
