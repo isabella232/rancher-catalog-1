@@ -7,11 +7,6 @@
   minimum_rancher_version: v0.59.0
   uuid: goagent-0
   questions:
-    # - variable: "user_auth"
-    #   description: "User Auth, like <user1:password1 user2:password2>"
-    #   label: "User Auth:"
-    #   required: true
-    #   type: "string"
     - variable: "agent_key"
       description: "Agent Key for auto-registration of agents"
       label: "Agent Key:"
@@ -24,12 +19,6 @@
       required: true
       default: "8154"
       type: "int"
-    # - variable: ssh_port
-    #   description: "port for remote access of go-agents"
-    #   label: "SSH Port"
-    #   required: true
-    #   default: "8154"
-    #   type: "int"
     - variable: "mem_initial"
       description: "Initial java memory in Mb"
       label: "Initial memory:"
@@ -42,6 +31,37 @@
       required: true
       default: 1024
       type: "int"
+gocd-agent:
+  scale: 1
+  retain_ip: true
+  health_check:
+    port: 8154
+    interval: 5000
+    unhealthy_threshold: 5
+    request_line: GET /go/agents HTTP/1.0
+    healthy_threshold: 2
+    response_timeout: 5000
+
+
+    # - GO_SERVER=""
+    # - GO_SERVER_PORT="8153"
+    # - AGENT_MEM=${mem_initial}m
+    # - AGENT_MAX_MEM=${mem_max}m
+    # - AGENT_KEY=${agent_key}
+    # - AGENT_RESOURCES=""
+    # - AGENT_ENVIRONMENTS=""
+    # - AGENT_HOSTNAME=""
+    # - variable: "user_auth"
+    #   description: "User Auth, like <user1:password1 user2:password2>"
+    #   label: "User Auth:"
+    #   required: true
+    #   type: "string"
+    # - variable: ssh_port
+    #   description: "port for remote access of go-agents"
+    #   label: "SSH Port"
+    #   required: true
+    #   default: "8154"
+    #   type: "int"
     # - variable: "volume_work"
     #   description: "Work volume to save goserver data"
     #   label: "Work volume:"
@@ -58,23 +78,3 @@
     #   options:
     #     - local
     #     - convoy-gluster
-gocd-agent:
-  scale: 1
-  retain_ip: true
-  health_check:
-    port: 8154
-    interval: 5000
-    unhealthy_threshold: 5
-    request_line: GET /go/agents HTTP/1.0
-    healthy_threshold: 2
-    response_timeout: 5000
-
-
-    # - GO_SERVER=""
-    # - GO_SERVER_PORT="8153"
-    - AGENT_MEM=${mem_initial}m
-    - AGENT_MAX_MEM=${mem_max}m
-    - AGENT_KEY=${agent_key}
-    - AGENT_RESOURCES=""
-    - AGENT_ENVIRONMENTS=""
-    - AGENT_HOSTNAME=""

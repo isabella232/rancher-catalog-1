@@ -12,46 +12,45 @@ gocd-agent:
     - AGENT_MEM=${mem_initial}m
     - AGENT_MAX_MEM=${mem_max}m
     - AGENT_KEY=${agent_key}
-    - DOCKER_GID_ON_HOST=""
   ports:
   - ${public_port}:8153
   - ${ssh_port}:8154
   labels:
     io.rancher.container.hostname_override: container_name
     io.rancher.container.pull_image: always
-    io.rancher.scheduler.affinity:host_label: type=agent
+    io.rancher.scheduler.affinity:host_label: "type=agent"
 
-
-    # io.rancher.sidekicks: gocd-volume
+# - DOCKER_GID_ON_HOST=""
+# io.rancher.sidekicks: gocd-volume
 # gocd-volume:
 #   net: none
 #   labels:
 #     io.rancher.container.hostname_override: container_name
 #     io.rancher.container.start_once: true
-  # volumes:
-    # - ${volume_work}/artifacts:/var/lib/go-server/artifacts
-    # - ${volume_work}/db:/var/lib/go-server/db/h2db
-    # - ${volume_work}/plugins:/var/lib/go-server/plugins/external
-    # - ${volume_work}/flyweight:/var/lib/go-server/pipelines/flyweight
-    # - ${volume_work}/config:/etc/go
-    # - ${volume_work}/logs:/var/log/go-server
-    # - ${volume_work}/ssh:/var/go/.ssh
-    # - ${volume_work}:/opt/go-server/work
-    # - ${volume_work}/artifacts:/var/lib/go-server/artifacts
-    # - ${volume_work}/db:/var/lib/go-server/db/h2db
-    # - ${volume_work}/plugins:/var/lib/go-server/plugins/external
-    # - ${volume_work}/flyweight:/var/lib/go-server/pipelines/flyweight
-    # - ${volume_work}/config:/etc/go
-    # - ${volume_work}/logs:/var/log/go-server
-    # - ${volume_work}/ssh:/var/go/.ssh
-  # volume_driver: ${volume_driver}
-  # entrypoint: /bin/true
-  # image: busybox
-    # - AGENT_RESOURCES=""
-    # - AGENT_ENVIRONMENTS=""
-    # - AGENT_HOSTNAME=""
-    # $(getent group docker | cut -d: -f3)
+# volumes:
+# - ${volume_work}/artifacts:/var/lib/go-server/artifacts
+# - ${volume_work}/db:/var/lib/go-server/db/h2db
+# - ${volume_work}/plugins:/var/lib/go-server/plugins/external
+# - ${volume_work}/flyweight:/var/lib/go-server/pipelines/flyweight
+# - ${volume_work}/config:/etc/go
+# - ${volume_work}/logs:/var/log/go-server
+# - ${volume_work}/ssh:/var/go/.ssh
+# - ${volume_work}:/opt/go-server/work
+# - ${volume_work}/artifacts:/var/lib/go-server/artifacts
+# - ${volume_work}/db:/var/lib/go-server/db/h2db
+# - ${volume_work}/plugins:/var/lib/go-server/plugins/external
+# - ${volume_work}/flyweight:/var/lib/go-server/pipelines/flyweight
+# - ${volume_work}/config:/etc/go
+# - ${volume_work}/logs:/var/log/go-server
+# - ${volume_work}/ssh:/var/go/.ssh
+# volume_driver: ${volume_driver}
+# entrypoint: /bin/true
+# image: busybox
+# - AGENT_RESOURCES=""
+# - AGENT_ENVIRONMENTS=""
+# - AGENT_HOSTNAME=""
+# $(getent group docker | cut -d: -f3)
 
 
-  # volumes_from:
-  # - gocd-volume
+# volumes_from:
+# - gocd-volume
