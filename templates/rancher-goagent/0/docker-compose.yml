@@ -2,7 +2,7 @@ gocd-agent:
   labels:
     gocd.role: agent
   tty: true
-  image: gregorycox/rancher-go-agent
+  image: gregorycox/rancher-goagent
   # volumes_from:
   # - gocd-volume
   volumes:
