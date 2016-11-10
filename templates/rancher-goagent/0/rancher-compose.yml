@@ -41,7 +41,7 @@ gocd-agent:
   scale: 1
   retain_ip: true
   health_check:
-    port: 8154
+    port: 8153
     interval: 5000
     unhealthy_threshold: 5
     request_line: GET /go/agents HTTP/1.0
