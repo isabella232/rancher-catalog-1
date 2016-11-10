@@ -7,15 +7,21 @@
   minimum_rancher_version: v0.59.0
   uuid: goagent-0
   questions:
+    - variable: go_server_url
+      description: "Go Server URL"
+      label: "Go Server URL:"
+      required: true
+      # default: ""
+      type: "string"
     - variable: "agent_key"
       description: "Agent Key for auto-registration of agents"
       label: "Agent Key:"
       required: true
       default: "0123456789"
       type: "string"
-    - variable: public_port
+    - variable: go_server_port
       description: "public port to access the gocd server"
-      label: "Public Port"
+      label: "Go Server Port"
       required: true
       default: "8154"
       type: "int"
