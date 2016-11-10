@@ -1,8 +1,8 @@
 name: gocd-agent
 description: |
-  (Experimental) Gocd agent
+  Sungard AS - (Experimental) Gocd agent
 version: 0.0.1-rancher1
 category: Continuous Integration
 maintainer: "Greg Cox <gregory.cox@sungardas.com>"
 minimum_rancher_version: v0.59.0
-license: 
+license: Apache-2.0
