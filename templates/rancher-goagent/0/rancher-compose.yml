@@ -40,13 +40,13 @@
 gocd-agent:
   scale: 1
   retain_ip: true
-  health_check:
-    port: 8153
-    interval: 5000
-    unhealthy_threshold: 5
-    request_line: GET /go/agents HTTP/1.0
-    healthy_threshold: 2
-    response_timeout: 5000
+  # health_check:
+  #   port: 8153
+  #   interval: 5000
+  #   unhealthy_threshold: 5
+  #   request_line: GET /go/agents HTTP/1.0
+  #   healthy_threshold: 2
+  #   response_timeout: 5000
 
 
     # - GO_SERVER=""
