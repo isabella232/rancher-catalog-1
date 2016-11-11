@@ -6,7 +6,7 @@ gocd-agent:
   privileged: true
   volumes:
     - /var/run/docker.sock:/var/run/docker.sock
-    - /usr/bin/docker:/usr/bin/docker
+    - /bin/docker:/bin/docker
   environment:
     - GO_SERVER_URL=${go_server_url}
     - GO_SERVER_PORT=${go_server_port}
