@@ -23,7 +23,7 @@
       description: "public port to access the gocd server"
       label: "Go Server Port"
       required: true
-      default: "8154"
+      default: "8153"
       type: "int"
     - variable: "mem_initial"
       description: "Initial java memory in Mb"
